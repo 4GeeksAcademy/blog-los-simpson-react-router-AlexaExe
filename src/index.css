@@ -8,3 +8,11 @@
 }
 /* esto es la barra horizontal */
 
+body {
+  background-image: url("https://wallpapers.com/images/high/zoom-background-p13tpgvfxfamd9cw.webp");
+   background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
