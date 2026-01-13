@@ -1,13 +1,13 @@
-export const initialStore=()=>{
-  return{
+export const initialStore = () => {
+  return {
 
-    characters: [],
-    location: [],
+    characters: null,
+    locations: null,
   }
 }
 
 export default function storeReducer(store, action = {}) {
-  switch(action.type){
+  switch (action.type) {
     case 'get_characters':
 
       return {
@@ -15,14 +15,14 @@ export default function storeReducer(store, action = {}) {
         characters: action.payload
       };
 
-      case 'get_location':
+    case 'get_locations':
 
       return {
-        ...store,
-        location: action.payload
+      ...store,
+      locations: action.payload
       };
 
-    default:
+        default:
       throw Error('Unknown action.');
-  }    
-}
+      }
+  }
