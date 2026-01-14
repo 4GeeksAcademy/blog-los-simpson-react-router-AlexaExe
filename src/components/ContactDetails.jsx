@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import useGlobalReducer from "../hooks/useGlobalReducer"; //no entiendo esto... 
+import useGlobalReducer from "../hooks/useGlobalReducer"; 
 
 
 const ContactDetails = () => {

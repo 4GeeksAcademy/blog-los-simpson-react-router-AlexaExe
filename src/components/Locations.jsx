@@ -13,7 +13,7 @@ export const Locations = ({ locations }) => {
                 <img src={`https://cdn.thesimpsonsapi.com/200${locations.image_path}`} alt={locations.name} />
             </div>
 
-            <div>
+            <div className="d-block">
 
                 <h3> Lugar:
                     <Link to={`locations/${locations.id}`}>
@@ -21,6 +21,10 @@ export const Locations = ({ locations }) => {
                     </Link>
                 </h3>
                 <p>Ciudad:  {locations.town}</p>
+                <button type="button" class="btn btn-outline-danger" onClick={() => handleFavorite (contact.id)}
+                     > 💖
+                
+                </button>
 
             </div>
 

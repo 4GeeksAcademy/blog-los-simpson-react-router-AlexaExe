@@ -11,6 +11,7 @@ import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
 import ContactDetails from "./components/ContactDetails";
 import LocationDetails from "./components/LocationDetails";
+import Favorites from "./pages/Favorites";
 
 
 export const router = createBrowserRouter(
@@ -30,6 +31,7 @@ export const router = createBrowserRouter(
         <Route path="/demo" element={<Demo />} />
         <Route path="/characters/:id" element={<ContactDetails/>} />
         <Route path="/locations/:id" element={<LocationDetails/>} />
+        <Route path="/favorites/:id" element={<Favorites/>} />
       </Route>
     )
 );

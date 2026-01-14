@@ -3,8 +3,9 @@ export const initialStore = () => {
 
     characters: null,
     locations: null,
-  }
-}
+    favorites: null,
+  };
+};
 
 export default function storeReducer(store, action = {}) {
   switch (action.type) {
@@ -21,6 +22,14 @@ export default function storeReducer(store, action = {}) {
       ...store,
       locations: action.payload
       };
+
+    case 'add_to_favorites':
+
+    return{
+      ...store,
+      favorites: [...store, action.payload]
+
+    };
 
         default:
       throw Error('Unknown action.');
