@@ -7,10 +7,14 @@ import { Link } from "react-router-dom";
 export const Locations = ({ locations }) => {
     const { store, dispatch } = useGlobalReducer()
     const handleClick = () => {
+        
         dispatch({
         type:"add_to_favorites",
-        payload: locations
-        });    
+        payload: {
+                ...locations , 
+                type: "location" } //me traigo el locations inicial y filtro por tipo 
+        }); 
+
     }
 
     return (
@@ -27,14 +31,14 @@ export const Locations = ({ locations }) => {
 
                 <div className="d-flex justify-content-around">
                 <Link to={`/favorites/${locations.id}`}>
-                <button type="button" class="btn btn-outline-danger" onClick={() => handleFavorite(locations.id)}
+                <button type="button" class="btn btn-outline-danger" onClick={handleClick}
+                
                 > 💖
 
                 </button>
                 </Link>
 
                 <Link to={`locations/${locations.id}`}>
-
                     <button className="btn btn-outline-success gap-2">Leer más</button>
                 </Link>
                 </div>

@@ -25,12 +25,15 @@ export default function storeReducer(store, action = {}) {
 
     case 'add_to_favorites':
   
-    const exists = store.favorites.find(
-        fav => fav.id === action.payload.id
-    );
+    const exists = store.favorites.find(fav => {
+      // esta lógica hace que pueda coger los elementos no sólo por id, sino por tipo
+      // y sí en caso se repite el id, se muestran ambos elementos...
+
+      return fav.id === action.payload.id && fav.type === action.payload.type;
+    });
 
     if (exists) {
-        // Identifica si ya está en lista, no hacemos nada
+        // Identifica si ya está en lista, no agrega nada
         return store;
     }
 
